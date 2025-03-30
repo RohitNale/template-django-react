@@ -1,0 +1,20 @@
+services:
+  backend:
+    container_name: my-backend
+    image: my-backend:latest
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    container_name: my-frontend
+    image: my-frontend:latest
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend

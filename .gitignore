@@ -1,0 +1,4 @@
+include backend/.gitignore
+include frontend/.gitignore
+
+.ruff_cache
